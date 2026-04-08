@@ -102,17 +102,17 @@ sudo mn --custom topology.py --topo triangle \
 ## Test Scenarios
 
 ### Scenario 1 — Normal Operation
+```bash
 mininet> pingall
-
+```
 Expected: 0% packet loss
-
-
+```bash
 mininet> h1 ping -c 5 h2
-
+```
 Expected: 0% loss, ~1ms RTT
-
+```bash
 mininet> iperf h1 h2
-
+```
 Expected: throughput measuremen
 
 ### Scenario 2 — Link Failure and Recovery
