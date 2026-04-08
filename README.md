@@ -169,18 +169,6 @@ mininet> iperf h1 h2
 Note: The high throughput value (42.2 Gbps) is due to Mininet’s virtual environment, where bandwidth is not limited by physical hardware. Actual network throughput would be lower in real-world scenarios.
 ---
 
-## Proof of Execution
-
-- Screenshot 1: `pingall` — 0% packet loss (normal)
-- Screenshot 2: `h1 ping h2` after `link s1 s2 down` — recovery via backup
-- Screenshot 3: Flow table before link failure
-- Screenshot 4: Flow table after link failure — rules cleared
-- Screenshot 5: Controller logs showing WARN/SUCCESS messages
-- Screenshot 6: Wireshark capture showing ICMP packets
-- Screenshot 7: iperf throughput results
-
----
-
 ## Cleanup
 ```bash
 mininet> exit
