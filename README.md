@@ -163,10 +163,10 @@ mininet> iperf h1 h2
 |---|---|---|---|
 | Ping RTT | ~1ms | brief loss then recovers | ~1ms |
 | Packet Loss | 0% | 1-2 packets | 0% |
-| Throughput (iperf) | X Mbps | reduced | X Mbps |
+| Throughput (iperf) | 900 Mbps | reduced | 42.2 Gbps |
 | Flow table rules | unicast rules | cleared then rebuilt | unicast rules |
 
-
+Note: The high throughput value (42.2 Gbps) is due to Mininet’s virtual environment, where bandwidth is not limited by physical hardware. Actual network throughput would be lower in real-world scenarios.
 ---
 
 ## Proof of Execution
