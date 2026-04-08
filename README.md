@@ -117,34 +117,34 @@ Expected: throughput measuremen
 
 ### Scenario 2 — Link Failure and Recovery
 Step 1: Confirm normal connectivity
+```bash
 mininet> h1 ping -c 3 h2
-
+```
 Step 2: Simulate link failure
+```bash
 mininet> link s1 s2 down
-
+```
 Step 3: Traffic reroutes via S1-S3 backup path
-
+```bash
 mininet> h1 ping -c 5 h2
-
+```
 Step 4: Check flow tables changed(in Terminal 3)
-
+```bash
 sudo ovs-ofctl dump-flows s1
-
 sudo ovs-ofctl dump-flows s2
-
 sudo ovs-ofctl dump-flows s3
-
+```
 Step 5: Restore link
-
+```bash
 mininet> link s1 s2 up
-
+```
 Step 6: Confirm full recovery
-
+```bash
 mininet> h1 ping -c 5 h2
-
 mininet> iperf h1 h2
-
+```
 ## Expected Controller Output
+```bash
 [HH:MM:SS] --- [INFO] Controller ready. Waiting for switches...
 [HH:MM:SS] --- [INFO] Switch 00-00-00-00-00-01 connected.
 [HH:MM:SS] --- [INFO] Switch 00-00-00-00-00-02 connected.
@@ -154,7 +154,7 @@ mininet> iperf h1 h2
 [HH:MM:SS] !!! [WARN] LINK FAILURE on s1 port 2
 [HH:MM:SS] +++ [SUCCESS] s1: Flushed. Re-routing via backup path.
 [HH:MM:SS] +++ [SUCCESS] LINK RESTORED on s1 port 2
-
+```
 ---
 
 ## Performance Observations
@@ -166,13 +166,10 @@ mininet> iperf h1 h2
 | Throughput (iperf) | X Mbps | reduced | X Mbps |
 | Flow table rules | unicast rules | cleared then rebuilt | unicast rules |
 
-*(Fill in your actual measured values from iperf and ping)*
 
 ---
 
 ## Proof of Execution
-
-*(Add your screenshots here)*
 
 - Screenshot 1: `pingall` — 0% packet loss (normal)
 - Screenshot 2: `h1 ping h2` after `link s1 s2 down` — recovery via backup
