@@ -117,11 +117,9 @@ Expected: throughput measuremen
 
 ### Scenario 2 — Link Failure and Recovery
 Step 1: Confirm normal connectivity
-
 mininet> h1 ping -c 3 h2
 
 Step 2: Simulate link failure
-
 mininet> link s1 s2 down
 
 Step 3: Traffic reroutes via S1-S3 backup path
